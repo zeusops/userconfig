@@ -413,7 +413,7 @@ STHud_Settings_TextShadow = 1;
 // tfar_radiocode_west = _bluefor;
 // tfar_radiocode_east = _bluefor;
 // tfar_radiocode_independent = _bluefor;
-tfar_radioCodesDisabled = 1;
+force force tfar_radioCodesDisabled = 1;
 
 //// Fire For Effect (IFA3)
 force force RydFFE_Active = false;
