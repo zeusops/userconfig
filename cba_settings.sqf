@@ -416,8 +416,8 @@ STHud_Settings_TextShadow = 1;
 force force tfar_radioCodesDisabled = true;
 
 // TFAR - global settings
-force TFAR_AICanHearPlayer = false;
-force TFAR_AICanHearSpeaker = false;
+force TFAR_AICanHearPlayer = true;
+force TFAR_AICanHearSpeaker = true;
 force TFAR_defaultIntercomSlot = 0;
 force TFAR_enableIntercom = true;
 force TFAR_experimentalVehicleIsolation = true;
