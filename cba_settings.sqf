@@ -432,7 +432,6 @@ force TFAR_objectInterceptionStrength = 400;
 force tfar_radiocode_east = "_opfor";
 force tfar_radiocode_independent = "_independent";
 force tfar_radiocode_west = "_bluefor";
-force tfar_radioCodesDisabled = false;
 force TFAR_SameLRFrequenciesForSide = false;
 force TFAR_SameSRFrequenciesForSide = false;
 force TFAR_setting_defaultFrequencies_lr_east = "";
