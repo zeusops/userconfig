@@ -459,3 +459,10 @@ force TFAR_Teamspeak_Channel_Name = "TaskForceRadio";
 force TFAR_Teamspeak_Channel_Password = "123";
 force tfar_terrain_interception_coefficient = 7;
 force TFAR_voiceCone = true;
+
+// Grad trenches
+grad_trenches_functions_giantEnvelopeDigTime = 180;
+grad_trenches_functions_shortEnvelopeDigTime = 30;
+grad_trenches_functions_smallEnvelopeDigTime = 40;
+grad_trenches_functions_vehicleEnvelopeDigTime = 480;
+grad_trenches_functions_bigEnvelopeDigTime = 60;
