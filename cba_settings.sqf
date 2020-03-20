@@ -664,6 +664,9 @@ force force grad_trenches_functions_vehicleEnvelopeDigTime = 480;
 force force niarms_accswitch = true;
 force force niarms_magSwitch = true;
 
+//// NMAB Settings
+NMAB_setting_particlesEnabled = true;
+
 //// STUI Settings
 STHud_Settings_ColourBlindMode = "Normal";
 STHud_Settings_Font = "PuristaSemibold";
