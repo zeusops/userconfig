@@ -184,7 +184,9 @@ force force ace_medical_blood_bloodLifetime = 900;
 force force ace_medical_blood_enabledFor = 2;
 force force ace_medical_blood_maxBloodObjects = 500;
 force force ace_medical_fatalDamageSource = 2;
+ace_medical_feedback_bloodVolumeEffectType = 0;
 ace_medical_feedback_painEffectType = 0;
+force force ace_medical_fractureChance = 0.8;
 force force ace_medical_fractures = 1;
 ace_medical_gui_enableActions = 0;
 force force ace_medical_gui_enableMedicalMenu = 1;
@@ -226,7 +228,6 @@ force force ace_medical_treatment_medicIV = 1;
 force force ace_medical_treatment_medicPAK = 1;
 force force ace_medical_treatment_medicSurgicalKit = 1;
 force force ace_medical_treatment_timeCoefficientPAK = 0.7;
-force force ace_medical_treatment_woundReopening = false;
 
 //// ACE Name Tags
 ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
