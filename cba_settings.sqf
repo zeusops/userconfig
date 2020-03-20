@@ -17,7 +17,7 @@ force force ace_advanced_fatigue_swayFactor = 1;
 force force ace_advanced_fatigue_terrainGradientFactor = 1;
 
 //// ACE Advanced Throwing
-force force ace_advanced_throwing_enabled = true;
+ace_advanced_throwing_enabled = true;
 force force ace_advanced_throwing_enablePickUp = true;
 force force ace_advanced_throwing_enablePickUpAttached = true;
 ace_advanced_throwing_showMouseControls = true;
@@ -27,9 +27,9 @@ ace_advanced_throwing_showThrowArc = true;
 force force ace_arsenal_allowDefaultLoadouts = true;
 force force ace_arsenal_allowSharedLoadouts = true;
 ace_arsenal_camInverted = false;
-force force ace_arsenal_enableIdentityTabs = true;
+ace_arsenal_enableIdentityTabs = true;
 ace_arsenal_enableModIcons = true;
-force force ace_arsenal_EnableRPTLog = false;
+ace_arsenal_EnableRPTLog = false;
 ace_arsenal_fontHeight = 4.5;
 
 //// ACE Artillery
@@ -99,7 +99,7 @@ force force ace_hearing_unconsciousnessVolume = 0.4;
 
 //// ACE Interaction
 force force ace_interaction_disableNegativeRating = true;
-force force ace_interaction_enableMagazinePassing = true;
+ace_interaction_enableMagazinePassing = true;
 force force ace_interaction_enableTeamManagement = true;
 
 //// ACE Interaction Menu
@@ -114,7 +114,7 @@ ace_interact_menu_colorTextMax = [1,1,1,1];
 ace_interact_menu_colorTextMin = [1,1,1,0.25];
 ace_interact_menu_cursorKeepCentered = false;
 ace_interact_menu_cursorKeepCenteredSelfInteraction = false;
-ace_interact_menu_menuAnimationSpeed = 0;
+ace_interact_menu_menuAnimationSpeed = 1;
 ace_interact_menu_menuBackground = 0;
 ace_interact_menu_menuBackgroundSelf = 0;
 ace_interact_menu_selectorColor = [1,0,0];
@@ -135,7 +135,7 @@ force force ace_refuel_rate = 1;
 force force ace_repair_addSpareParts = true;
 force force ace_repair_autoShutOffEngineWhenStartingRepair = true;
 force force ace_repair_consumeItem_toolKit = 0;
-force force ace_repair_displayTextOnRepair = true;
+ace_repair_displayTextOnRepair = false;
 force force ace_repair_engineerSetting_fullRepair = 1;
 force force ace_repair_engineerSetting_repair = 1;
 force force ace_repair_engineerSetting_wheel = 0;
@@ -156,9 +156,9 @@ force force ace_map_BFT_Enabled = false;
 force force ace_map_BFT_HideAiGroups = false;
 force force ace_map_BFT_Interval = 1;
 force force ace_map_BFT_ShowPlayerNames = false;
-force force ace_map_DefaultChannel = -1;
-force force ace_map_mapGlow = false;
-force force ace_map_mapIllumination = false;
+ace_map_DefaultChannel = 0;  // global
+ace_map_mapGlow = true;
+ace_map_mapIllumination = true;
 force force ace_map_mapLimitZoom = false;
 force force ace_map_mapShake = false;
 force force ace_map_mapShowCursorCoordinates = false;
@@ -186,7 +186,7 @@ force force ace_medical_blood_maxBloodObjects = 500;
 force force ace_medical_fatalDamageSource = 2;  // sum of trauma + fatal wounds
 ace_medical_feedback_bloodVolumeEffectType = 0;
 ace_medical_feedback_painEffectType = 0;
-force force ace_medical_fractureChance = 0.8;
+force ace_medical_fractureChance = 0.8;
 force force ace_medical_fractures = 1;
 ace_medical_gui_enableActions = 0;
 force force ace_medical_gui_enableMedicalMenu = 1;
@@ -280,7 +280,7 @@ force force ace_pylons_timePerPylon = 5;
 
 //// ACE Quick Mount
 force force ace_quickmount_distance = 3;
-ace_quickmount_enabled = true;
+force force ace_quickmount_enabled = true;
 ace_quickmount_enableMenu = 3;
 ace_quickmount_priority = 0;
 force force ace_quickmount_speed = 18;
@@ -296,7 +296,7 @@ force force ace_scopes_defaultZeroRange = 100;
 force force ace_scopes_enabled = false;
 force force ace_scopes_forceUseOfAdjustmentTurrets = false;
 force force ace_scopes_overwriteZeroRange = false;
-force force ace_scopes_simplifiedZeroing = true;
+force force ace_scopes_simplifiedZeroing = false;
 ace_scopes_useLegacyUI = false;
 force force ace_scopes_zeroReferenceBarometricPressure = 1013.25;
 force force ace_scopes_zeroReferenceHumidity = 0;
@@ -377,14 +377,14 @@ force force ace_vehicles_keepEngineRunning = false;
 
 //// ACE View Distance Limiter
 force force ace_viewdistance_enabled = true;
-force force ace_viewdistance_limitViewDistance = 3000;
+force force ace_viewdistance_limitViewDistance = 10000;
 ace_viewdistance_objectViewDistanceCoeff = 0;
-force force ace_viewdistance_viewDistanceAirVehicle = 0;
-force force ace_viewdistance_viewDistanceLandVehicle = 0;
-force force ace_viewdistance_viewDistanceOnFoot = 0;
+ace_viewdistance_viewDistanceAirVehicle = 0;
+ace_viewdistance_viewDistanceLandVehicle = 0;
+ace_viewdistance_viewDistanceOnFoot = 0;
 
 //// ACE Weapons
-force force ace_common_persistentLaserEnabled = true;
+ace_common_persistentLaserEnabled = true;
 force force ace_laserpointer_enabled = true;
 ace_reload_displayText = true;
 ace_reload_showCheckAmmoSelf = false;
@@ -392,7 +392,7 @@ ace_weaponselect_displayText = true;
 
 //// ACE Weather
 force force ace_weather_enabled = false;
-ace_weather_showCheckAirTemperature = true;
+ace_weather_showCheckAirTemperature = false;
 force force ace_weather_updateInterval = 60;
 force force ace_weather_windSimulation = false;
 
