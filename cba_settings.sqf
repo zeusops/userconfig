@@ -127,7 +127,7 @@ ace_interact_menu_useListMenuSelf = false;
 force force ace_cargo_enable = true;
 force force ace_cargo_loadTimeCoefficient = 5;
 force force ace_cargo_paradropTimeCoefficent = 2.5;
-force force ace_rearm_distance = 20;
+force force ace_rearm_distance = 30;
 force force ace_rearm_level = 0;
 force force ace_rearm_supply = 0;
 force force ace_refuel_hoseLength = 12;
@@ -275,7 +275,7 @@ force force ace_pylons_enabledFromAmmoTrucks = true;
 force force ace_pylons_rearmNewPylons = false;
 force force ace_pylons_requireEngineer = false;
 force force ace_pylons_requireToolkit = false;
-force force ace_pylons_searchDistance = 15;
+force force ace_pylons_searchDistance = 30;
 force force ace_pylons_timePerPylon = 5;
 
 //// ACE Quick Mount
