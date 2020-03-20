@@ -43,7 +43,7 @@ force force ace_mk6mortar_useAmmoHandling = false;
 //// ACE Captives
 force force ace_captives_allowHandcuffOwnSide = false;
 force force ace_captives_allowSurrender = true;
-force force ace_captives_requireSurrender = 2;
+force force ace_captives_requireSurrender = 2;  // surrendering or no weapon
 force force ace_captives_requireSurrenderAi = false;
 
 //// ACE Common
@@ -85,7 +85,7 @@ force force ace_frag_reflectionsEnabled = true;
 force force ace_frag_spallEnabled = true;
 
 //// ACE Goggles
-ace_goggles_effects = 0;
+ace_goggles_effects = 2;  // tint+effects
 ace_goggles_showClearGlasses = false;
 ace_goggles_showInThirdPerson = false;
 
@@ -183,7 +183,7 @@ force force ace_medical_bleedingCoefficient = 0.75;
 force force ace_medical_blood_bloodLifetime = 900;
 force force ace_medical_blood_enabledFor = 2;
 force force ace_medical_blood_maxBloodObjects = 500;
-force force ace_medical_fatalDamageSource = 2;
+force force ace_medical_fatalDamageSource = 2;  // sum of trauma + fatal wounds
 ace_medical_feedback_bloodVolumeEffectType = 0;
 ace_medical_feedback_painEffectType = 0;
 force force ace_medical_fractureChance = 0.8;
@@ -202,8 +202,8 @@ force force ace_medical_spontaneousWakeUpEpinephrineBoost = 14.9887;
 force force ace_medical_statemachine_AIUnconsciousness = false;
 force force ace_medical_statemachine_cardiacArrestTime = 120;
 force force ace_medical_statemachine_fatalInjuriesAI = 0;
-force force ace_medical_statemachine_fatalInjuriesPlayer = 1;
-force force ace_medical_treatment_advancedBandages = 0;
+force force ace_medical_statemachine_fatalInjuriesPlayer = 1;  // only in cardiac arrest
+force force ace_medical_treatment_advancedBandages = 0;  // disabled
 force force ace_medical_treatment_advancedDiagnose = false;
 force force ace_medical_treatment_advancedMedication = false;
 force force ace_medical_treatment_allowLitterCreation = true;
@@ -219,9 +219,9 @@ force force ace_medical_treatment_cprSuccessChance = 1;
 force force ace_medical_treatment_holsterRequired = 0;
 force force ace_medical_treatment_litterCleanupDelay = 600;
 force force ace_medical_treatment_locationEpinephrine = 0;
-force force ace_medical_treatment_locationPAK = 0;
+force force ace_medical_treatment_locationPAK = 0;  // anywhere
 force force ace_medical_treatment_locationsBoostTraining = true;
-force force ace_medical_treatment_locationSurgicalKit = 4;
+force force ace_medical_treatment_locationSurgicalKit = 4;  // disabled
 force force ace_medical_treatment_maxLitterObjects = 500;
 force force ace_medical_treatment_medicEpinephrine = 0;
 force force ace_medical_treatment_medicIV = 1;
@@ -319,7 +319,7 @@ force force ace_switchunits_switchToWest = false;
 
 //// ACE Uncategorized
 force force ace_fastroping_requireRopeItems = false;
-force force ace_gforces_enabledFor = 0;
+force force ace_gforces_enabledFor = 0;  // disabled
 force force ace_hitreactions_minDamageToTrigger = 0.1;
 ace_inventory_inventoryDisplaySize = 0;
 force force ace_laser_dispersionCount = 2;
@@ -403,7 +403,7 @@ force force ace_winddeflection_vehicleEnabled = true;
 
 //// ACE Zeus
 force force ace_zeus_autoAddObjects = true;
-force force ace_zeus_canCreateZeus = 0;
+force force ace_zeus_canCreateZeus = 0;  // host or logged in admin
 force force ace_zeus_radioOrdnance = false;
 force force ace_zeus_remoteWind = false;
 force force ace_zeus_revealMines = 0;
