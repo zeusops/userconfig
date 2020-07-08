@@ -1,3 +1,5 @@
+zen_common_autoAddObjects = true;
+
 //// ACE Advanced Ballistics
 force force ace_advanced_ballistics_ammoTemperatureEnabled = false;
 force force ace_advanced_ballistics_barrelLengthInfluenceEnabled = true;
