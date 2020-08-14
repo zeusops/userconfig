@@ -680,19 +680,19 @@ STHud_Settings_TextShadow = 1;
 STHud_Settings_UnconsciousFadeEnabled = true;
 
 //// TFAR - Animations
-radioAnims_cba_ads = true;
-radioAnims_cba_Earpieces = "[]";
-radioAnims_cba_main = true;
-radioAnims_cba_preference_fadak = "Vest";
-radioAnims_cba_preference_Others = "Vest";
-radioAnims_cba_preference_pnr1000 = "Vest";
-radioAnims_cba_preference_PRC148 = "Vest";
-radioAnims_cba_preference_PRC152 = "Vest";
-radioAnims_cba_preference_PRC154 = "Vest";
-radioAnims_cba_preference_rf7800 = "Vest";
-radioAnims_cba_vehicles = true;
-radioAnims_cba_vestarmor = true;
-radioAnims_cba_vests = "[vest player]";
+force radioAnims_cba_ads = true;
+force radioAnims_cba_Earpieces = "[]";
+force radioAnims_cba_main = true;
+force radioAnims_cba_preference_fadak = "Vest";
+force radioAnims_cba_preference_Others = "Vest";
+force radioAnims_cba_preference_pnr1000 = "Vest";
+force radioAnims_cba_preference_PRC148 = "Vest";
+force radioAnims_cba_preference_PRC152 = "Vest";
+force radioAnims_cba_preference_PRC154 = "Vest";
+force radioAnims_cba_preference_rf7800 = "Vest";
+force radioAnims_cba_vehicles = true;
+force radioAnims_cba_vestarmor = true;
+force radioAnims_cba_vests = "[vest player]";
 
 //// TFAR - Clientside settings
 TFAR_default_radioVolume = 6;
