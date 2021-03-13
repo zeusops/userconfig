@@ -89,7 +89,7 @@ force force ace_frag_spallEnabled = true;  // default: false
 
 // ACE G-Forces
 force force ace_gforces_coef = 1;
-force force ace_gforces_enabledFor = 0;  // disabled
+force force ace_gforces_enabledFor = 0;  // disabled, default: 1 (only aircraft)
 
 // ACE Goggles
 ace_goggles_effects = 2;  // tint+effects
@@ -111,20 +111,22 @@ force force ace_hearing_unconsciousnessVolume = 0.4;
 force force ace_interaction_disableNegativeRating = true;  // default: false
 ace_interaction_enableMagazinePassing = true;
 force force ace_interaction_enableTeamManagement = true;
+ace_interaction_enableWeaponAttachments = true;
 
 // ACE Interaction Menu
 ace_gestures_showOnInteractionMenu = 2;
 ace_interact_menu_actionOnKeyRelease = true;
 ace_interact_menu_addBuildingActions = false;
-ace_interact_menu_alwaysUseCursorInteraction = false;  // default: true
+ace_interact_menu_alwaysUseCursorInteraction = false;
 ace_interact_menu_alwaysUseCursorSelfInteraction = true;
 ace_interact_menu_colorShadowMax = [0,0,0,1];
 ace_interact_menu_colorShadowMin = [0,0,0,0.25];
 ace_interact_menu_colorTextMax = [1,1,1,1];
 ace_interact_menu_colorTextMin = [1,1,1,0.25];
+ace_interact_menu_consolidateSingleChild = false;
 ace_interact_menu_cursorKeepCentered = false;
 ace_interact_menu_cursorKeepCenteredSelfInteraction = false;
-ace_interact_menu_menuAnimationSpeed = 1;  // default: 0
+ace_interact_menu_menuAnimationSpeed = 1;  // 2x, default: 0 (1x)
 ace_interact_menu_menuBackground = 0;
 ace_interact_menu_menuBackgroundSelf = 0;
 ace_interact_menu_selectorColor = [1,0,0];
@@ -172,15 +174,15 @@ force force ace_map_mapIllumination = false;  // default: true
 force force ace_map_mapLimitZoom = false;
 force force ace_map_mapShake = false;  // default: true
 force force ace_map_mapShowCursorCoordinates = false;
-force force ace_markers_moveRestriction = 0;  // all players
+force force ace_markers_moveRestriction = 0;  // all players, default: not forced
 ace_markers_timestampEnabled = true;
 ace_markers_timestampFormat = "HH:MM";
 ace_markers_timestampHourFormat = 24;
 
 // ACE Map Gestures
-force force ace_map_gestures_allowCurator = true;
-force force ace_map_gestures_allowSpectator = true;
-force force ace_map_gestures_briefingMode = 0;
+force force ace_map_gestures_allowCurator = true;  // default: not forced
+force force ace_map_gestures_allowSpectator = true;  // default: not forced
+force force ace_map_gestures_briefingMode = 0;  // All, default: not forced
 ace_map_gestures_defaultColor = [1,0.88,0,0.7];
 ace_map_gestures_defaultLeadColor = [1,0.88,0,0.95];
 force force ace_map_gestures_enabled = true;
@@ -207,14 +209,15 @@ ace_medical_feedback_painEffectType = 0;
 force force ace_medical_fractureChance = 0.8;
 force force ace_medical_fractures = 1;
 ace_medical_gui_enableActions = 0;
-force force ace_medical_gui_enableMedicalMenu = 1;
-force force ace_medical_gui_enableSelfActions = true;
+force force ace_medical_gui_enableMedicalMenu = 1;  // default: not forced
+force force ace_medical_gui_enableSelfActions = true;  // default: not forced
 ace_medical_gui_interactionMenuShowTriage = 1;
 force force ace_medical_gui_maxDistance = 3;
 ace_medical_gui_openAfterTreatment = true;
 force force ace_medical_ivFlowRate = 6;  // default: 1
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 0.85;  // default: 1
+force force ace_medical_painUnconsciousChance = 0.1;
 force force ace_medical_playerDamageThreshold = 2;  // default: 1
 force force ace_medical_spontaneousWakeUpChance = 0.25;  // default: 0.05
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;  // default: 1
@@ -226,6 +229,7 @@ force force ace_medical_statemachine_fatalInjuriesPlayer = 1;  // only in cardia
 force force ace_medical_treatment_advancedBandages = 0;  // disabled, default: 1 (enabled, no reopen)
 force force ace_medical_treatment_advancedDiagnose = false;  // default: true
 force force ace_medical_treatment_advancedMedication = false;  // default: true
+force force ace_medical_treatment_allowBodyBagUnconscious = false;
 force force ace_medical_treatment_allowLitterCreation = true;
 force force ace_medical_treatment_allowSelfIV = 1;
 force force ace_medical_treatment_allowSelfPAK = 1;  // default: 0
@@ -239,6 +243,7 @@ force force ace_medical_treatment_cprSuccessChance = 1;  // default: 0.4
 force force ace_medical_treatment_holsterRequired = 0;
 force force ace_medical_treatment_litterCleanupDelay = 600;
 force force ace_medical_treatment_locationEpinephrine = 0;
+force force ace_medical_treatment_locationIV = 0;  // Anywhere
 force force ace_medical_treatment_locationPAK = 4;  // disabled, default: 3 (vics & facilities)
 force force ace_medical_treatment_locationsBoostTraining = false;
 force force ace_medical_treatment_locationSurgicalKit = 4;  // disabled, default: 2 (facilities)
@@ -254,7 +259,7 @@ force force ace_medical_treatment_treatmentTimeCPR = 15;
 force force ace_medical_treatment_treatmentTimeIV = 12;
 force force ace_medical_treatment_treatmentTimeSplint = 7;
 force force ace_medical_treatment_treatmentTimeTourniquet = 7;
-force force ace_medical_treatment_woundReopenChance = 1;  // note: coef, disabled elsewhere
+force force ace_medical_treatment_woundReopenChance = 1;  // note: just a coef, disabled elsewhere
 force force ace_medical_treatment_woundStitchTime = 5;
 
 // ACE Name Tags
@@ -269,7 +274,7 @@ force force ace_nametags_playerNamesViewDistance = 5;
 force force ace_nametags_showCursorTagForVehicles = true;  // default: false
 ace_nametags_showNamesForAI = true;  // default: false
 ace_nametags_showPlayerNames = 1;
-force force ace_nametags_showPlayerRanks = false;  // default: true
+force force ace_nametags_showPlayerRanks = false;  // default: true, not forced
 ace_nametags_showSoundWaves = 1;
 ace_nametags_showVehicleCrewInfo = true;
 ace_nametags_tagSize = 2;
@@ -288,6 +293,7 @@ force force ace_overheating_enabled = true;
 force force ace_overheating_overheatingDispersion = true;
 force force ace_overheating_showParticleEffects = true;  // default: true, not forced
 force force ace_overheating_showParticleEffectsForEveryone = false;  // default: false, not forced
+// NOTE: Should these be changed to make jamming more of a challenge?
 force force ace_overheating_unJamFailChance = 0;  // default: 0.1
 force force ace_overheating_unJamOnreload = true;  // default: false
 
@@ -473,6 +479,7 @@ force force boxloader_tractor_bulldoze_ruins = false;
 force force boxloader_tractor_bulldoze_wall = false;
 
 // CBA UI
+cba_diagnostic_ConsoleIndentType = -1;
 cba_ui_notifyLifetime = 4;
 cba_ui_StorePasswords = 1;
 
@@ -482,14 +489,17 @@ force force cba_disposable_replaceDisposableLauncher = true;
 cba_events_repetitionMode = 1;
 cba_optics_usePipOptics = true;
 
+// Community Base Addons - Network
+force force cba_network_loadoutValidation = 2;  // All units, default: 0 (Never)
+
 // Freestyle's Crash Landing
 force force fscl_captiveSystem = true;
-force force fscl_damageTreshold = 95;  // default: 99
+force force fscl_damageTreshold = 95;  // default: 99. Gives a bit more leeway to land successfully
 force force fscl_debug = false;
 force force fscl_ejectionProp = 33;
 force force fscl_ejectionSystem = true;
 force force fscl_gForceThreshold = 5;
-force force fscl_ignoreNonPlayerVehicles = false;  // default: true
+force force fscl_ignoreNonPlayerVehicles = false;  // default: true. Default value would make empty vics invincible
 force force fscl_stateThreshold = 10;
 
 // GRAD Trenches
@@ -509,7 +519,7 @@ force force grad_trenches_functions_camouflageRequireEntrenchmentTool = true;
 force force grad_trenches_functions_decayTime = 1800;
 force force grad_trenches_functions_giantEnvelopeDigTime = 180;  // default: 90
 force force grad_trenches_functions_giantEnvelopeRemovalTime = -1;
-force force grad_trenches_functions_LongEnvelopeDigTime = 100;  // default: 100
+force force grad_trenches_functions_LongEnvelopeDigTime = 100;
 force force grad_trenches_functions_LongEnvelopeRemovalTime = -1;
 force force grad_trenches_functions_shortEnvelopeDigTime = 30;  // default: 15
 force force grad_trenches_functions_shortEnvelopeRemovalTime = -1;
@@ -640,7 +650,7 @@ force force TFAR_objectInterceptionStrength = 400;
 force force tfar_radiocode_east = "_opfor";
 force force tfar_radiocode_independent = "_independent";
 force force tfar_radiocode_west = "_bluefor";
-force force tfar_radioCodesDisabled = true;  // default: false
+force force tfar_radioCodesDisabled = true;  // default: false. We want to allow players to use radios from all
 force force TFAR_SameLRFrequenciesForSide = false;
 force force TFAR_SameSRFrequenciesForSide = false;
 force force TFAR_setting_defaultFrequencies_lr_east = "";
