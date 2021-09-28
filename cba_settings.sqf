@@ -592,6 +592,33 @@ force force diwako_dui_radar_sqlFirst = true;  // default: false
 force force diwako_dui_radar_vehicleCompassEnabled = false;  // default
 diwako_dui_use_layout_editor = false;
 
+// Enhanced Movement Rework
+emr_main_allowMidairClimbing = true;
+emr_main_animSpeedCoef = 1;
+emr_main_animSpeedStaminaCoef = 0.4;
+emr_main_blacklistStr = "Land_IndFnc_Pole_F,Land_IndFnc_Corner_F,Land_IndFnc_3_Hole_F,Land_IndFnc_9_F,Land_IndFnc_3_D_F,Land_IndFnc_3_F,CUP_A2_pletivo_wired,CUP_A2_pletivo_wired_hole,CUP_A2_pletivo_wired_branap,CUP_A2_pletivo_wired_branal_civil,CUP_A2_pletivo_wired_slope,Fort_RazorWire,Land_Razorwire_F,Wire,Fence_Ind_long,Fence_Ind,Land_Boxloader_Fort_Wire_3m,Land_Boxloader_Fort_Wire_5m,WireFence,Land_New_WiredFence_5m_F,Land_New_WiredFence_pole_F,Land_New_WiredFence_10m_F,Land_New_WiredFence_10m_Dam_F,Land_Net_Fence_4m_F,Land_Net_Fence_8m_F,Land_Net_Fence_Gate_F,Land_Net_Fence_pole_F,Land_Net_FenceD_8m_F,Land_NetFence_01_m_4m_F,Land_NetFence_01_m_4m_noLC_F,Land_NetFence_01_m_8m_F,Land_NetFence_01_m_8m_noLC_F,Land_NetFence_01_m_d_F,Land_NetFence_01_m_d_noLC_F,Land_NetFence_01_m_gate_F,Land_NetFence_01_m_pole_F,Land_NetFence_02_m_2m_F,Land_NetFence_02_m_4m_F,Land_NetFence_02_m_8m_F,Land_NetFence_02_m_d_F,Land_NetFence_02_m_gate_v1_closed_F,Land_NetFence_02_m_gate_v1_F,Land_NetFence_02_m_gate_v2_closed_F,Land_NetFence_02_m_gate_v2_F,Land_NetFence_02_m_pole_F,Land_NetFence_03_m_3m_corner_F,Land_NetFence_03_m_3m_d_F,Land_NetFence_03_m_3m_F,Land_NetFence_03_m_3m_hole_F,Land_NetFence_03_m_9m_F,Land_NetFence_03_m_pole_F,Land_Mil_WiredFence_F,Land_Mil_WiredFence_Gate_F,Land_Mil_WiredFenceD_F,Land_CamoConcreteWall_01_l_4m_d_v1_F,Land_CamoConcreteWall_01_l_4m_d_v2_F,Land_CamoConcreteWall_01_l_4m_v1_F,Land_CamoConcreteWall_01_l_4m_v2_F,Land_CamoConcreteWall_01_l_end_v1_F,Land_CamoConcreteWall_01_pole_v1_F";
+emr_main_climbingEnabled = true;
+force emr_main_climbOnDuty = 1.8;
+force emr_main_climbOverDuty = 1.8;
+emr_main_dropDuty = 0.7;
+emr_main_dropViewElevation = -0.7;
+emr_main_enableWalkableSurface = true;
+emr_main_enableWeightCheck = false;
+force emr_main_hintType = 4;
+emr_main_jumpDuty = 1;
+emr_main_jumpingEnabled = true;
+emr_main_jumpingLoadCoefficient = 1;
+emr_main_jumpVelocity = 3.4;
+emr_main_maxClimbHeight = 2.6;
+emr_main_maxDropHeight = 6;
+emr_main_maxWeightClimb1 = 100;
+emr_main_maxWeightClimb2 = 85;
+emr_main_maxWeightClimb3 = 60;
+emr_main_maxWeightJump = 100;
+emr_main_preventHighVaulting = false;
+emr_main_staminaCoefficient = 1;
+emr_main_whitelistStr = "";
+
 // Freestyle's Crash Landing
 force force fscl_captiveSystem = true;
 force force fscl_damageTreshold = 95;  // default: 99. Gives a bit more leeway to land successfully
