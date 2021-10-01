@@ -93,7 +93,7 @@ force force ace_gforces_enabledFor = 0;  // disabled, default: 1 (only aircraft)
 
 // ACE Goggles
 // NOTE: This should be configured client-side, forced here for now because the mission forces this on otherwise
-force force ace_goggles_effects = 2;  // disabled, default: 2 (tint+effects)
+force force ace_goggles_effects = 0;  // disabled, default: 2 (tint+effects)
 ace_goggles_showClearGlasses = false;
 ace_goggles_showInThirdPerson = false;
 
