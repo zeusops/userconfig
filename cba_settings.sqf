@@ -357,19 +357,22 @@ force force ace_nightvision_noiseScaling = 0.25;  // default: 1
 ace_nightvision_shutterEffects = true;
 
 // ACE Overheating
-force force ace_overheating_cookoffCoef = 1;
+force force ace_overheating_cookoffCoef = 0; //default: 1
+force force ace_overheating_coolingCoef = 2; //default: 1
 force force ace_overheating_displayTextOnJam = true;  // default: true, not forced
 force force ace_overheating_enabled = true;
 force force ace_overheating_heatCoef = 1;
 force force ace_overheating_jamChanceCoef = 1;
 force force ace_overheating_overheatingDispersion = true;
 force force ace_overheating_overheatingRateOfFire = true;
-ace_overheating_particleEffectsAndDispersionDistance = 3000;
+force force ace_overheating_particleEffectsAndDispersionDistance = 3000;  // default: 3000, not forced
 force force ace_overheating_showParticleEffects = true;  // default: true, not forced
 force force ace_overheating_showParticleEffectsForEveryone = false;  // default: false, not forced
+force force ace_overheating_suppressorCoef = 0;  // default: 1
 // NOTE: Should these be changed to make jamming more of a challenge?
 force force ace_overheating_unJamFailChance = 0;  // default: 0.1
 force force ace_overheating_unJamOnreload = true;  // default: false
+force force ace_overheating_unJamOnSwapBarrel = false;
 
 // ACE Pointing
 force force ace_finger_enabled = true;  // default: false
