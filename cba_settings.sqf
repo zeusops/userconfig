@@ -104,10 +104,15 @@ force force acex_field_rations_timeWithoutWater = 2;
 force force acex_field_rations_waterSourceActions = 2;
 
 // ACE Fire
+force force ace_fire_dropWeapon = 1;
 force force ace_fire_enabled = true; // TODO: what does this do?
 force force ace_fire_enableFlare = false;
+ace_fire_enableScreams = true;
 
 // ACE Fortify
+force force ace_fortify_markObjectsOnMap = 1;
+force force ace_fortify_timeCostCoefficient = 1;
+force force ace_fortify_timeMin = 1.5;
 acex_fortify_settingHint = 2;
 
 // ACE Fragmentation Simulation
@@ -556,7 +561,7 @@ force force ABS_enableManualUnflip = false;  // default: true
 force force ABS_enableMod = true;
 force force ABS_minAngle = 60;
 force force ABS_NoAutoUnflipPlayer = false;
-force force ABS_perFrameKey = true;
+ABS_perFrameKey = true;
 
 // BettIR
 BettIR_ViewDistance = 300;
@@ -584,6 +589,15 @@ force force boxloader_tractor_bulldoze_fence = false;
 force force boxloader_tractor_bulldoze_hide = false;
 force force boxloader_tractor_bulldoze_ruins = false;
 force force boxloader_tractor_bulldoze_wall = false;
+
+// Brush Clearing
+force force ClearBrush_requireEntrenchingTool = true;
+
+// Bundeswehr
+BWA3_Leopard_ClocknumbersDir_Commander = false;
+BWA3_NaviPad_showMembers = true;
+BWA3_Puma_ClocknumbersDir_Commander = false;
+BWA3_Puma_ClocknumbersDir_Gunner = false;
 
 // Community Base Addons
 cba_diagnostic_ConsoleIndentType = -1;
@@ -757,7 +771,7 @@ force force grad_trenches_functions_allowSmallEnvelope = true;
 force force grad_trenches_functions_allowTrenchDecay = false;
 force force grad_trenches_functions_allowVehicleEnvelope = true;
 force force grad_trenches_functions_bigEnvelopeDamageMultiplier = 1.5;  // default: 2
-force force grad_trenches_functions_bigEnvelopeDigTime = 45;	// default: 40
+force force grad_trenches_functions_bigEnvelopeDigTime = 45;  // default: 40
 force force grad_trenches_functions_bigEnvelopeRemovalTime = -1;
 force force grad_trenches_functions_buildFatigueFactor = 0;  // default: 1
 force force grad_trenches_functions_camouflageRequireEntrenchmentTool = true;
@@ -769,16 +783,16 @@ force force grad_trenches_functions_giantEnvelopeRemovalTime = -1;
 force force grad_trenches_functions_hitDecayMultiplier = 2;  // default: 1
 force force grad_trenches_functions_LongEnvelopeDigTime = 150;  // default: 100
 force force grad_trenches_functions_LongEnvelopeRemovalTime = -1;
-force force grad_trenches_functions_shortEnvelopeDamageMultiplier = 2;	// default: 2
-force force grad_trenches_functions_shortEnvelopeDigTime = 30;	// default: 15
+force force grad_trenches_functions_shortEnvelopeDamageMultiplier = 2;  // default: 2
+force force grad_trenches_functions_shortEnvelopeDigTime = 30;  // default: 15
 force force grad_trenches_functions_shortEnvelopeRemovalTime = -1;
-force force grad_trenches_functions_smallEnvelopeDamageMultiplier = 3;	// default: 3
-force force grad_trenches_functions_smallEnvelopeDigTime = 25;	// default: 30
+force force grad_trenches_functions_smallEnvelopeDamageMultiplier = 3;  // default: 3
+force force grad_trenches_functions_smallEnvelopeDigTime = 25;  // default: 30
 force force grad_trenches_functions_smallEnvelopeRemovalTime = -1;
-force force grad_trenches_functions_stopBuildingAtFatigueMax = false;	// default: true
+force force grad_trenches_functions_stopBuildingAtFatigueMax = false;  // default: true
 force force grad_trenches_functions_timeoutToDecay = 1800;
 force force grad_trenches_functions_vehicleEnvelopeDamageMultiplier = 1;
-force force grad_trenches_functions_vehicleEnvelopeDigTime = 300;	// default: 120
+force force grad_trenches_functions_vehicleEnvelopeDigTime = 300;  // default: 120
 force force grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 
 // LAMBS Danger
@@ -790,6 +804,7 @@ lambs_danger_disableAIHideFromTanksAndAircraft = false;
 lambs_danger_disableAIPlayerGroup = false;
 lambs_danger_disableAIPlayerGroupReaction = false;
 lambs_danger_disableAutonomousFlares = false;
+lambs_danger_disableAutonomousSmokeGrenades = false;
 force force lambs_danger_panicChance = 0.1;
 
 // LAMBS Danger Eventhandlers
@@ -833,6 +848,11 @@ force force niarms_magSwitch = true;
 force force NMAB_setting_classExclusionsStr = "";
 NMAB_setting_pfxHelicopters = true;
 NMAB_setting_pfxPlanes = true;
+
+// RR Immersive Maps -- all client-side
+RR_mapStuff_enableCompassAnimations = true;
+RR_mapStuff_enableMapAnimations = true;
+RR_mapStuff_enableMapInteractions = true;
 
 // TFAR - Animations
 force force radioAnims_cba_ads = true;
@@ -887,7 +907,7 @@ force force TFAR_objectInterceptionStrength = 400;
 force force tfar_radiocode_east = "_opfor";
 force force tfar_radiocode_independent = "_independent";
 force force tfar_radiocode_west = "_bluefor";
-force force tfar_radioCodesDisabled = true;  // default: false. We want to allow players to use radios from all
+force force tfar_radioCodesDisabled = true;  // default: false. We want to allow players to use radios from all factions
 force force TFAR_SameLRFrequenciesForSide = false;
 force force TFAR_SameSRFrequenciesForSide = false;
 force force TFAR_setting_defaultFrequencies_lr_east = "";
@@ -915,6 +935,23 @@ force force TFAR_Teamspeak_Channel_Name = "TaskForceRadio";
 force force TFAR_Teamspeak_Channel_Password = "123";
 force force tfar_terrain_interception_coefficient = 7;
 force force TFAR_voiceCone = true;
+
+// USAF
+force force usaf_afterburner_setting_allow_ai = true;
+force force USAF_allowNuke = true;
+force force usaf_debug_setting_enabled_clients = false;
+force force usaf_debug_setting_enabled_server = false;
+force force usaf_serviceMenu_setting_allowHangarRearm = true;
+force force usaf_serviceMenu_setting_allowHangarRefuel = true;
+force force usaf_serviceMenu_setting_allowHangarRepair = true;
+force force usaf_serviceMenu_setting_allowLoadoutModification = true;
+force force usaf_serviceMenu_setting_enabled = true;
+force force usaf_serviceMenu_setting_refuelTime = "100";
+force force usaf_serviceMenu_setting_reloadTime = "2";
+force force usaf_serviceMenu_setting_repairTime = "100";
+force force usaf_serviceMenu_setting_replaceSources = false;
+force force usaf_serviceMenu_setting_selectorSearchRadius = "15";
+force force usaf_setting_allow_aiFormlights = true;
 
 // VET_Unflipping
 force force vet_unflipping_require_serviceVehicle = false;
@@ -1016,6 +1053,9 @@ zen_faction_filter_1_BLU_GEN_F = true;
 zen_faction_filter_1_BLU_T_F = true;
 zen_faction_filter_1_BLU_W_F = true;
 zen_faction_filter_1_British_Top = true;
+zen_faction_filter_1_BWA3_Faction_Fleck = true;
+zen_faction_filter_1_BWA3_Faction_Multi = true;
+zen_faction_filter_1_BWA3_Faction_Tropen = true;
 zen_faction_filter_1_Canadian_Desert_Top = true;
 zen_faction_filter_1_Canadian_Top = true;
 zen_faction_filter_1_Czech_Desert_Top = true;
@@ -1024,6 +1064,7 @@ zen_faction_filter_1_DSA_DeltaX = true;
 zen_faction_filter_1_DSA_DeltaX_groups = true;
 zen_faction_filter_1_German_Desert_Top = true;
 zen_faction_filter_1_German_Top = true;
+zen_faction_filter_1_GR_HP2_Helicopters = true;
 zen_faction_filter_1_Irish_Top = true;
 zen_faction_filter_1_Israeli_Top = true;
 zen_faction_filter_1_Latvian_Top = true;
@@ -1074,6 +1115,7 @@ zen_faction_filter_1_UK3CB_TKM_B = true;
 zen_faction_filter_1_UK3CB_TKP_B = true;
 zen_faction_filter_1_UK3CB_UN_B = true;
 zen_faction_filter_1_UK_ARMED_FORCES = true;
+zen_faction_filter_1_USAF = true;
 zen_faction_filter_2_IND_C_F = true;
 zen_faction_filter_2_IND_E_F = true;
 zen_faction_filter_2_IND_F = true;
@@ -1130,3 +1172,4 @@ zen_faction_filter_3_IND_L_F = true;
 zen_faction_filter_3_UK3CB_ADC_C = true;
 zen_faction_filter_3_UK3CB_CHC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = true;
+zen_faction_filter_3_xs_categories = true;
