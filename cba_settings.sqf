@@ -550,6 +550,14 @@ force force ace_zeus_revealMines = 0;
 force force ace_zeus_zeusAscension = false;
 force force ace_zeus_zeusBird = false;
 
+// Anti-Bounce System
+force force ABS_AssistUnflip = true;
+force force ABS_enableManualUnflip = false;  // default: true
+force force ABS_enableMod = true;
+force force ABS_minAngle = 60;
+force force ABS_NoAutoUnflipPlayer = false;
+force force ABS_perFrameKey = true;
+
 // BettIR
 BettIR_ViewDistance = 300;
 
