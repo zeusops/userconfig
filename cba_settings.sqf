@@ -105,7 +105,7 @@ force force acex_field_rations_waterSourceActions = 2;
 
 // ACE Fire
 force force ace_fire_dropWeapon = 1;
-force force ace_fire_enabled = true; // TODO: what does this do?
+force force ace_fire_enabled = false; // default: true
 force force ace_fire_enableFlare = false;
 ace_fire_enableScreams = true;
 
