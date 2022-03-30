@@ -670,7 +670,7 @@ diwako_dui_nametags_rankNameStyle = "default";
 force force diwako_dui_nametags_renderDistance = 35;  // default: 40
 force force diwako_dui_nametags_showUnconAsDead = true;  // default: false
 diwako_dui_nametags_useLIS = true;
-diwako_dui_nametags_useSideIsFriendly = true;
+force force diwako_dui_nametags_useSideIsFriendly = false;
 
 // DUI - Squad Radar - Radar
 diwako_dui_compass_hide_alone_group = false;
