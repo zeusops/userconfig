@@ -652,9 +652,9 @@ diwako_dui_nametags_customRankStyle = "[[""PRIVATE"",""CORPORAL"",""SERGEANT"","
 diwako_dui_nametags_deadColor = [0.2,0.2,0.2,1];
 diwako_dui_nametags_deadRenderDistance = 3.5;
 force force diwako_dui_nametags_drawRank = false;  // default: true
-force force diwako_dui_nametags_enabled = true;
-force force diwako_dui_nametags_enableFOVBoost = true;
-force force diwako_dui_nametags_enableOcclusion = true;
+diwako_dui_nametags_enabled = true;
+diwako_dui_nametags_enableFOVBoost = true;
+force force diwako_dui_nametags_enableOcclusion = true;  // default: not forced
 diwako_dui_nametags_fadeInTime = 0.05;
 diwako_dui_nametags_fadeOutTime = 0.5;
 diwako_dui_nametags_fontGroup = "RobotoCondensedLight";
@@ -670,7 +670,7 @@ diwako_dui_nametags_rankNameStyle = "default";
 force force diwako_dui_nametags_renderDistance = 35;  // default: 40
 force force diwako_dui_nametags_showUnconAsDead = true;  // default: false
 diwako_dui_nametags_useLIS = true;
-force force diwako_dui_nametags_useSideIsFriendly = false;
+force force diwako_dui_nametags_useSideIsFriendly = false;  // default: true, not forced
 
 // DUI - Squad Radar - Radar
 diwako_dui_compass_hide_alone_group = false;
