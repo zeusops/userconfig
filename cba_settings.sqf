@@ -650,7 +650,7 @@ diwako_dui_reset_ui_pos = false;
 // DUI - Squad Radar - Nametags
 diwako_dui_nametags_customRankStyle = "[[""PRIVATE"",""CORPORAL"",""SERGEANT"",""LIEUTENANT"",""CAPTAIN"",""MAJOR"",""COLONEL""],[""Pvt."",""Cpl."",""Sgt."",""Lt."",""Capt."",""Maj."",""Col.""]]";
 diwako_dui_nametags_deadColor = [0.2,0.2,0.2,1];
-diwako_dui_nametags_deadRenderDistance = 3.5;
+force force diwako_dui_nametags_deadRenderDistance = 3.5;  // default: not forced
 force force diwako_dui_nametags_drawRank = false;  // default: true
 diwako_dui_nametags_enabled = true;
 diwako_dui_nametags_enableFOVBoost = true;
