@@ -213,20 +213,6 @@ force force ace_rearm_supply = 0;
 force force ace_refuel_hoseLength = 12;
 force force ace_refuel_progressDuration = 2;
 force force ace_refuel_rate = 4;  // default: 1
-force force ace_repair_addSpareParts = true;
-force force ace_repair_autoShutOffEngineWhenStartingRepair = true;  // default: false
-force force ace_repair_consumeItem_toolKit = 0;
-ace_repair_displayTextOnRepair = true;
-force force ace_repair_engineerSetting_fullRepair = 1;  // engineer only, default: 2 (adv engineer only)
-force force ace_repair_engineerSetting_repair = 1;
-force force ace_repair_engineerSetting_wheel = 0;
-force force ace_repair_fullRepairLocation = 0;  // anywhere, default: 2 (repair facility)
-force force ace_repair_fullRepairRequiredItems = ["ace_repair_anyToolKit"];
-force force ace_repair_locationsBoostTraining = false;
-force force ace_repair_miscRepairRequiredItems = ["ace_repair_anyToolKit"];
-force force ace_repair_repairDamageThreshold = 1;  // default: 0.6
-force force ace_repair_repairDamageThreshold_engineer = 1;  // default: 0.4
-force force ace_repair_wheelRepairRequiredItems = [];
 force force ace_towing_addRopeToVehicleInventory = true;
 
 //// ACE Magazine Repack
@@ -428,6 +414,22 @@ force force ace_quickmount_enabled = true;
 ace_quickmount_enableMenu = 3;
 ace_quickmount_priority = 0;
 force force ace_quickmount_speed = 18;
+
+//// ACE Repair
+force force ace_repair_addSpareParts = true;
+force force ace_repair_autoShutOffEngineWhenStartingRepair = true;  // default: false
+force force ace_repair_consumeItem_toolKit = 0;
+ace_repair_displayTextOnRepair = true;
+force force ace_repair_engineerSetting_fullRepair = 1;  // engineer only, default: 2 (adv engineer only)
+force force ace_repair_engineerSetting_repair = 1;
+force force ace_repair_engineerSetting_wheel = 0;
+force force ace_repair_fullRepairLocation = 0;  // anywhere, default: 2 (repair facility)
+force force ace_repair_fullRepairRequiredItems = ["ace_repair_anyToolKit"];
+force force ace_repair_locationsBoostTraining = false;
+force force ace_repair_miscRepairRequiredItems = ["ace_repair_anyToolKit"];
+force force ace_repair_repairDamageThreshold = 1;  // default: 0.6
+force force ace_repair_repairDamageThreshold_engineer = 1;  // default: 0.4
+force force ace_repair_wheelRepairRequiredItems = [];
 
 //// ACE Respawn
 force force ace_respawn_removeDeadBodiesDisconnected = false;  // default: true
