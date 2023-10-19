@@ -1,8 +1,8 @@
 // A3TI
 force force A3TI_ACE_JAVELIN = false;
 force force A3TI_ALLOW_TANK_DRIVER = false;
-force force A3TI_ALLOW_VANILLA_TI = true;
-force force A3TI_ENABLE_ZEUS = true;
+force force A3TI_ALLOW_VANILLA_TI = true;  // TODO: should this be disabled?
+A3TI_ENABLE_ZEUS = true;  // default: forced
 force force A3TI_HD_VISION_FIGHTER = false;
 force force A3TI_HD_VISION_LANDVEH = true;
 force force A3TI_HD_VISION_SHIP = false;
