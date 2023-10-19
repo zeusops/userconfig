@@ -1,7 +1,8 @@
 //// A3TI
 force force A3TI_ACE_JAVELIN = false;
 force force A3TI_ALLOW_TANK_DRIVER = false;
-force force A3TI_ALLOW_VANILLA_TI = true;  // TODO: should this be disabled?
+// When disabled, the vanilla thermals are disabled automatically
+force force A3TI_ALLOW_VANILLA_TI = true;
 A3TI_ENABLE_ZEUS = true;  // default: forced
 force force A3TI_HD_VISION_FIGHTER = false;
 force force A3TI_HD_VISION_LANDVEH = true;
@@ -36,16 +37,28 @@ ace_advanced_throwing_showThrowArc = true;
 
 //// ACE Advanced Vehicle Damage
 force force ace_vehicle_damage_enableCarDamage = false;
-force force ace_vehicle_damage_enabled = true;  // default: false
+// "Primary goal is to remove global vehicle health and instead opt for
+// a 'component based' health system."
+// NOTE: This was previously enabled by default (and thus enabled for us), but
+//       after a while it was set to be disabled by default.
+// TODO: Check if this should be enabled. Does this affect the repair times
+//       significantly?
+force force ace_vehicle_damage_enabled = false;
 force force ace_vehicle_damage_removeAmmoDuringCookoff = true;
+
+//// ACE AI
+// Auto-equips the NVGs, doesn't add them to the inventory
+force force ace_ai_assignNVG = false;
 
 //// ACE Arsenal
 force force ace_arsenal_allowDefaultLoadouts = true;
 force force ace_arsenal_allowSharedLoadouts = true;
 ace_arsenal_camInverted = false;
+ace_arsenal_defaultToFavorites = false;
 ace_arsenal_enableIdentityTabs = true;  // default: forced true
 ace_arsenal_enableModIcons = true;
 ace_arsenal_EnableRPTLog = false;
+ace_arsenal_favoritesColor = [0.9,0.875,0.6];
 ace_arsenal_fontHeight = 4.5;
 ace_arsenal_loadoutsSaveFace = false;
 ace_arsenal_loadoutsSaveInsignia = true;
@@ -62,7 +75,8 @@ force force ace_mk6mortar_useAmmoHandling = false;
 //// ACE Captives
 force force ace_captives_allowHandcuffOwnSide = false;  // default: true
 force force ace_captives_allowSurrender = true;
-force force ace_captives_requireSurrender = 2;  // surrendering or no weapon, default: 1 (surrendering only)
+// 0: Disabled, 1: SurrenderOnly, 2: SurrenderOrNoWeapon
+force force ace_captives_requireSurrender = 2;  // default: 1
 force force ace_captives_requireSurrenderAi = false;
 
 //// ACE Casings
@@ -80,12 +94,12 @@ ace_common_epilepsyFriendlyMode = false;
 ace_common_progressBarInfo = 2;
 ace_common_settingFeedbackIcons = 1;
 ace_common_settingProgressBarLocation = 0;
-force force ace_noradio_enabled = true;
 
 //// ACE Cook off
 force force ace_cookoff_ammoCookoffDuration = 0.2;  // default: 1
 force force ace_cookoff_destroyVehicleAfterCookoff = false;
-force force ace_cookoff_enable = 0;  // disabled, default: 2 (players and ai)
+// 0: Disabled, 1: Players only, 2: Players and AI
+force force ace_cookoff_enable = 0;  // default: 2
 force force ace_cookoff_enableAmmobox = true;
 force force ace_cookoff_enableAmmoCookoff = true;
 force force ace_cookoff_enableFire = true;
@@ -100,12 +114,15 @@ force force ace_csw_handleExtraMagazinesType = 0;
 force force ace_csw_progressBarTimeCoefficent = 1;
 
 //// ACE Dragging
+force force ace_dragging_allowRunWithLightweight = true;
 ace_dragging_dragAndFire = true;
+force force ace_dragging_skipContainerWeight = false;
 
 //// ACE Explosives
 ace_explosives_customTimerDefault = 30;
 force force ace_explosives_customTimerMax = 900;
 force force ace_explosives_customTimerMin = 5;
+// TODO: Should these be enabled?
 force force ace_explosives_explodeOnDefuse = false;  // default: true
 force force ace_explosives_punishNonSpecialists = false;  // default: true
 force force ace_explosives_requireSpecialist = false;
@@ -147,7 +164,9 @@ force force ace_gforces_coef = 1;
 force force ace_gforces_enabledFor = 0;  // disabled, default: 1 (only aircraft)
 
 //// ACE Goggles
-//// NOTE: This should be configured client-side, forced here for now because the mission forces this on otherwise
+// NOTE: This should be configured client-side, forced here for now because the
+//       mission forcibly enables this otherwise
+// TODO: Check if this is still true
 force force ace_goggles_effects = 0;  // disabled, default: 2 (tint+effects)
 ace_goggles_showClearGlasses = false;
 ace_goggles_showInThirdPerson = false;
@@ -208,8 +227,10 @@ force force ace_cargo_loadTimeCoefficient = 5;
 ace_cargo_openAfterUnload = 0;
 force force ace_cargo_paradropTimeCoefficent = 2.5;
 force force ace_rearm_distance = 30;  // default: 20
+force force ace_rearm_enabled = true;
 force force ace_rearm_level = 0;
 force force ace_rearm_supply = 0;
+force force ace_refuel_cargoRate = 10;
 force force ace_refuel_hoseLength = 12;
 force force ace_refuel_progressDuration = 2;
 force force ace_refuel_rate = 4;  // default: 1
@@ -227,13 +248,15 @@ force force ace_map_BFT_Enabled = false;
 force force ace_map_BFT_HideAiGroups = false;
 force force ace_map_BFT_Interval = 1;
 force force ace_map_BFT_ShowPlayerNames = false;
-force force ace_map_DefaultChannel = 0;  // global, default: -1 (disabled)
+// -1: disabled, 0: global, 1: side, 2: command, 3: group, 4: vehicle, 5: direct
+force force ace_map_DefaultChannel = 0;  // default: -1
 force force ace_map_mapGlow = false;  // default: true
 force force ace_map_mapIllumination = false;  // default: true
 force force ace_map_mapLimitZoom = false;
 force force ace_map_mapShake = false;  // default: true
 force force ace_map_mapShowCursorCoordinates = false;
-force force ace_markers_moveRestriction = 0;  // all players, default: not forced
+// -1: nobody, 0: all, 1: admins, 2: groupleaders, 3: groupleadersandadmins, 4: owner
+force force ace_markers_moveRestriction = 0;  // default: not forced
 ace_markers_timestampEnabled = true;
 ace_markers_timestampFormat = "HH:MM";
 ace_markers_timestampHourFormat = 24;
@@ -257,20 +280,27 @@ ace_maptools_rotateModifierKey = 1;
 
 //// ACE Medical
 force force ace_medical_ai_enabledFor = 2;
+// 0: disabled, 1: enabled, 2: enabled - auto convert items
+// Does AI require items for medical?
+force force ace_medical_ai_requireItems = 0;
 force force ace_medical_AIDamageThreshold = 0.5;  // default: 1
 force force ace_medical_bleedingCoefficient = 0.75;  // default: 1
 force force ace_medical_blood_bloodLifetime = 900;
 force force ace_medical_blood_enabledFor = 2;
 force force ace_medical_blood_maxBloodObjects = 500;
-force force ace_medical_deathChance = 1;  // TODO: check if this should be lowered. "Fatal Injury Death Chance"
+// TODO: check if this should be lowered. "Fatal Injury Death Chance"
+force force ace_medical_deathChance = 1;
+force force ace_medical_dropWeaponUnconsciousChance = 0;
 force force ace_medical_enableVehicleCrashes = true;
-force force ace_medical_fatalDamageSource = 2;  // sum of trauma + fatal wounds, default 0 (only fatal wounds)
+force force ace_medical_engine_damagePassThroughEffect = 1;
+// 0: vital shots only, 1: sum of trauma, 2: either
+force force ace_medical_fatalDamageSource = 2;  // default 0
 ace_medical_feedback_bloodVolumeEffectType = 0;
 ace_medical_feedback_enableHUDIndicators = true;
 ace_medical_feedback_painEffectType = 0;
 force force ace_medical_fractureChance = 0.8;
 force force ace_medical_fractures = 1;
-ace_medical_gui_bloodLossColor_0 = [1,1,1,1];
+ace_medical_gui_bloodLossColor_0 = [0,0,0,1];
 ace_medical_gui_bloodLossColor_1 = [1,0.95,0.64,1];
 ace_medical_gui_bloodLossColor_2 = [1,0.87,0.46,1];
 ace_medical_gui_bloodLossColor_3 = [1,0.8,0.33,1];
@@ -280,7 +310,8 @@ ace_medical_gui_bloodLossColor_6 = [1,0.54,0.08,1];
 ace_medical_gui_bloodLossColor_7 = [1,0.43,0.02,1];
 ace_medical_gui_bloodLossColor_8 = [1,0.3,0,1];
 ace_medical_gui_bloodLossColor_9 = [1,0,0,1];
-ace_medical_gui_damageColor_0 = [1,1,1,1];
+ace_medical_gui_bodyPartOutlineColor = [1,1,1,1];
+ace_medical_gui_damageColor_0 = [0,0,0,1];
 ace_medical_gui_damageColor_1 = [0.75,0.95,1,1];
 ace_medical_gui_damageColor_2 = [0.62,0.86,1,1];
 ace_medical_gui_damageColor_3 = [0.54,0.77,1,1];
@@ -296,11 +327,21 @@ force force ace_medical_gui_enableSelfActions = true;  // default: not forced
 ace_medical_gui_interactionMenuShowTriage = 1;
 force force ace_medical_gui_maxDistance = 3;
 ace_medical_gui_openAfterTreatment = true;
+ace_medical_gui_peekMedicalInfoReleaseDelay = 1;
+ace_medical_gui_peekMedicalOnHit = false;
+ace_medical_gui_peekMedicalOnHitDuration = 1;
 force force ace_medical_gui_showBloodlossEntry = true;
+force force ace_medical_gui_showDamageEntry = false;
+ace_medical_gui_tourniquetWarning = false;
 force force ace_medical_ivFlowRate = 6;  // default: 1
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 0.85;  // default: 1
 force force ace_medical_painUnconsciousChance = 0.1;
+// TODO: Should this be tweaked with regards to playerDamageThreshold
+//       and painCoefficient?
+force force ace_medical_painUnconsciousThreshold = 0.5;
+// Sets the amount of damage a player can receive before going unconscious
+// (and dying if "Sum of Trauma" is enabled).
 force force ace_medical_playerDamageThreshold = 2;  // default: 1
 force force ace_medical_spontaneousWakeUpChance = 0.25;  // default: 0.05
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;  // default: 1
@@ -308,30 +349,49 @@ force force ace_medical_statemachine_AIUnconsciousness = false;  // default: tru
 force force ace_medical_statemachine_cardiacArrestBleedoutEnabled = true;
 //// TODO: should this be increased to default?
 force force ace_medical_statemachine_cardiacArrestTime = 120;  // default: 300
-force force ace_medical_statemachine_fatalInjuriesAI = 0;  // always
-force force ace_medical_statemachine_fatalInjuriesPlayer = 1;  // only in cardiac arrest, defaulte: 0 (always)
-force force ace_medical_treatment_advancedBandages = 0;  // disabled, default: 1 (enabled, no reopen)
-force force ace_medical_treatment_advancedDiagnose = 0;  // disabled, default: 1 (enabled)
+// 0: always, 1: cardiac arrest, 2: never
+force force ace_medical_statemachine_fatalInjuriesAI = 0;
+// 0: always, 1: cardiac arrest, 2: never
+force force ace_medical_statemachine_fatalInjuriesPlayer = 1;  // default: 0
+// 0: disabled, 1: enabled, 2: enabled+reopen
+force force ace_medical_treatment_advancedBandages = 0;  // default: 1
+// 0: disabled, 1: enabled, 2: Enabled & Can Diagnose Death/Cardiac Arrest
+force force ace_medical_treatment_advancedDiagnose = 0;  // default: 1
 force force ace_medical_treatment_advancedMedication = false;  // default: true
 force force ace_medical_treatment_allowBodyBagUnconscious = false;
+// 0: disabled, 1: only if dead, 2: yes
+force force ace_medical_treatment_allowGraveDigging = 0;  // default: 1
 force force ace_medical_treatment_allowLitterCreation = true;
 force force ace_medical_treatment_allowSelfIV = 1;
 force force ace_medical_treatment_allowSelfPAK = 1;  // default: 0
 force force ace_medical_treatment_allowSelfStitch = 0;
 force force ace_medical_treatment_allowSharedEquipment = 0;
-force force ace_medical_treatment_clearTrauma = 2;  // after bandage, default: 1 (after stitch)
+// Effectiveness coef
+force force ace_medical_treatment_bandageEffectiveness = 1;
+// If enabled, using a "too good" bandage on a small wound will partially heal
+// the next would as well instead of wasting the rest of the bandaging
+// "potential", but takes the time equivalent to bandaging both wounds separately
+ace_medical_treatment_bandageRollover = true;
+// 0: never, 1: after stitch, 2: after bandage
+force force ace_medical_treatment_clearTrauma = 2;  // default: 1
 force force ace_medical_treatment_consumePAK = 0;
 force force ace_medical_treatment_consumeSurgicalKit = 0;
 force force ace_medical_treatment_convertItems = 0;
+// TODO: Should these be changed?
 force force ace_medical_treatment_cprSuccessChanceMax = 1;  // default: 0.4
 force force ace_medical_treatment_cprSuccessChanceMin = 1;  // default: 0.4
+// Create grave markers. Digging graves is disabled elsewhere.
+force force ace_medical_treatment_graveDiggingMarker = true;
 force force ace_medical_treatment_holsterRequired = 0;
 force force ace_medical_treatment_litterCleanupDelay = 600;
 force force ace_medical_treatment_locationEpinephrine = 0;
-force force ace_medical_treatment_locationIV = 0;  // anywhere
-force force ace_medical_treatment_locationPAK = 4;  // disabled, default: 3 (vics & facilities)
+// 0: Anywhere, 1: Vehicle, 2: MedicalFacilities, 3: VehiclesAndFacilities, 4: Disabled
+force force ace_medical_treatment_locationIV = 0;
+// 0: Anywhere, 1: Vehicle, 2: MedicalFacilities, 3: VehiclesAndFacilities, 4: Disabled
+force force ace_medical_treatment_locationPAK = 4;  // default: 3
 force force ace_medical_treatment_locationsBoostTraining = false;
-force force ace_medical_treatment_locationSurgicalKit = 4;  // disabled, default: 2 (facilities)
+// 0: Anywhere, 1: Vehicle, 2: MedicalFacilities, 3: VehiclesAndFacilities, 4: Disabled
+force force ace_medical_treatment_locationSurgicalKit = 4;  // default: 2
 force force ace_medical_treatment_maxLitterObjects = 500;
 force force ace_medical_treatment_medicEpinephrine = 0;
 force force ace_medical_treatment_medicIV = 1;
@@ -341,10 +401,12 @@ force force ace_medical_treatment_timeCoefficientPAK = 0.7;  // default: 1
 force force ace_medical_treatment_treatmentTimeAutoinjector = 5;
 force force ace_medical_treatment_treatmentTimeBodyBag = 15;
 force force ace_medical_treatment_treatmentTimeCPR = 15;
+force force ace_medical_treatment_treatmentTimeGrave = 30;
 force force ace_medical_treatment_treatmentTimeIV = 12;
 force force ace_medical_treatment_treatmentTimeSplint = 7;
 force force ace_medical_treatment_treatmentTimeTourniquet = 7;
-force force ace_medical_treatment_woundReopenChance = 1;  // note: just a coef, disabled elsewhere
+// NOTE: just a coef, disabled elsewhere
+force force ace_medical_treatment_woundReopenChance = 1;
 force force ace_medical_treatment_woundStitchTime = 5;
 
 //// ACE Name Tags
@@ -382,9 +444,9 @@ force force ace_overheating_heatCoef = 1;
 force force ace_overheating_jamChanceCoef = 1;
 force force ace_overheating_overheatingDispersion = true;
 force force ace_overheating_overheatingRateOfFire = true;
-force force ace_overheating_particleEffectsAndDispersionDistance = 3000;  // default: 3000, not forced
-force force ace_overheating_showParticleEffects = true;  // default: true, not forced
-force force ace_overheating_showParticleEffectsForEveryone = false;  // default: false, not forced
+force force ace_overheating_particleEffectsAndDispersionDistance = 3000;  // default: not forced
+force force ace_overheating_showParticleEffects = true;  // default: not forced
+force force ace_overheating_showParticleEffectsForEveryone = false;  // default: not forced
 force force ace_overheating_suppressorCoef = 0;  // default: 1
 //// NOTE: Should these be changed to make jamming more of a challenge?
 force force ace_overheating_unJamFailChance = 0;  // default: 0.1
@@ -420,15 +482,34 @@ force force ace_repair_addSpareParts = true;
 force force ace_repair_autoShutOffEngineWhenStartingRepair = true;  // default: false
 force force ace_repair_consumeItem_toolKit = 0;
 ace_repair_displayTextOnRepair = true;
-force force ace_repair_engineerSetting_fullRepair = 1;  // engineer only, default: 2 (adv engineer only)
+force force ace_repair_enabled = true;
+// 0: Anyone, 1: Engineer, 2: Advanced Engineer
+force force ace_repair_engineerSetting_fullRepair = 1;  // default: 2
+// 0: Anyone, 1: Engineer, 2: Advanced Engineer
 force force ace_repair_engineerSetting_repair = 1;
+// 0: Anyone, 1: Engineer, 2: Advanced Engineer
 force force ace_repair_engineerSetting_wheel = 0;
-force force ace_repair_fullRepairLocation = 0;  // anywhere, default: 2 (repair facility)
+// 0: Anywhere, 1: Repair vehicle, 2: Repair facility, 3: Repair facility or vehicle
+force force ace_repair_fullRepairLocation = 0;  // default: 2
 force force ace_repair_fullRepairRequiredItems = ["ace_repair_anyToolKit"];
 force force ace_repair_locationsBoostTraining = false;
 force force ace_repair_miscRepairRequiredItems = ["ace_repair_anyToolKit"];
-force force ace_repair_repairDamageThreshold = 1;  // default: 0.6
-force force ace_repair_repairDamageThreshold_engineer = 1;  // default: 0.4
+force force ace_repair_miscRepairTime = 7;  // seconds, default: 15
+// -1: Nobody, 0: Anyone, 1: Engineer, 2: Advanced Engineer
+force force ace_repair_patchWheelEnabled = 0;
+force force ace_repair_patchWheelLocation = ["ground","vehicle"];
+// Marks the percentage or remaining damage after repair
+force force ace_repair_patchWheelMaximumRepair = 0.3;
+force force ace_repair_patchWheelRequiredItems = [];  // default: ["ace_repair_anyToolKit"]
+force force ace_repair_patchWheelTime = 5;
+// Marks the percentage or remaining damage after repair. Does not apply to
+// Full Repair. This was previously set to 1 as a mistake.
+force force ace_repair_repairDamageThreshold = 0.6;
+// Marks the percentage or remaining damage after repair. Does not apply to
+// Full Repair. This was previously set to 1 as a mistake.
+force force ace_repair_repairDamageThreshold_engineer = 0.4;
+force force ace_repair_timeCoefficientFullRepair = 0.5;  // default: 1.5
+force force ace_repair_wheelChangeTime = 10;  // seconds
 force force ace_repair_wheelRepairRequiredItems = [];
 
 //// ACE Respawn
@@ -473,6 +554,7 @@ force force ace_trenches_smallEnvelopeDigDuration = 20;
 force force ace_trenches_smallEnvelopeRemoveDuration = 12;
 
 //// ACE Uncategorized
+force force ace_fastroping_autoAddFRIES = false;
 force force ace_fastroping_requireRopeItems = false;
 force force ace_gunbag_swapGunbagEnabled = true;
 force force ace_hitreactions_minDamageToTrigger = 0.1;
@@ -482,9 +564,10 @@ force force ace_laser_showLaserOnMap = 1;
 force force ace_marker_flags_placeAnywhere = false;
 force force ace_microdagr_mapDataAvailable = 2;
 force force ace_microdagr_waypointPrecision = 3;
+// "Mutes the controller player avatar"
 force force ace_noradio_enabled = true;
 ace_optionsmenu_showNewsOnMainMenu = true;
-force force ace_overpressure_distanceCoefficient = 1;  // default: 5
+force force ace_overpressure_distanceCoefficient = 1;
 force force ace_parachute_failureChance = 0;
 ace_parachute_hideAltimeter = true;
 ace_tagging_quickTag = 1;
@@ -565,10 +648,12 @@ acex_volume_remindIfLowered = false;
 acex_volume_showNotification = true;
 
 //// ACE Weapons
+// Re-enable gunlight after weapon switch or vehicle enter/exit
 ace_common_persistentLaserEnabled = true;  // default: false
 force force ace_laserpointer_enabled = true;
 ace_reload_displayText = true;
 ace_reload_showCheckAmmoSelf = false;
+ace_reloadlaunchers_displayStatusText = true;
 ace_weaponselect_displayText = true;
 
 //// ACE Weather
@@ -610,6 +695,8 @@ force force boxloader_allrepair_weight = 10000;
 force force boxloader_allrepair_work = true;
 force force boxloader_fort_allow_floating = false;
 boxloader_fort_snap_editor = false;
+// "Designed to fix issues with the deprecated retrofit system. Can be
+//  changed mid-mission."
 force force boxloader_hidecargo_enabled = true;  // default: false
 force force boxloader_maxload_enabled = false;
 force force boxloader_maxload_lift = 50;
@@ -696,8 +783,10 @@ diwako_dui_nametags_nameFontShadow = 1;
 diwako_dui_nametags_nameOtherGroupColor = [0.2,1,0,1];
 diwako_dui_nametags_rankNameStyle = "default";
 force force diwako_dui_nametags_renderDistance = 35;  // default: 40
+// Prevent the name colour immediately revealing whether a patient is setUnconscious or dead
 force force diwako_dui_nametags_showUnconAsDead = true;  // default: false
 diwako_dui_nametags_useLIS = true;
+// "If this setting is enabled the System uses BIS_fnc_sideIsFriendly instead of just checking the side"
 force force diwako_dui_nametags_useSideIsFriendly = false;  // default: true, not forced
 
 //// DUI - Squad Radar - Radar
@@ -715,11 +804,11 @@ force force diwako_dui_enable_compass = true;
 diwako_dui_enable_compass_dir = 1;
 force force diwako_dui_enable_occlusion = false;  // default: true
 diwako_dui_enable_occlusion_cone = 360;
-diwako_dui_hudScaling = 1.33333;
+diwako_dui_hudScaling = 1.33333;  // default: 1
 diwako_dui_namelist = true;
 diwako_dui_namelist_bg = 0;
 diwako_dui_namelist_only_buddy_icon = false;
-diwako_dui_namelist_size = 1.5396;
+diwako_dui_namelist_size = 1.5396;  // default: 1
 diwako_dui_namelist_text_shadow = 2;
 diwako_dui_namelist_width = 215;
 diwako_dui_radar_ace_finger = true;
@@ -734,7 +823,7 @@ force force diwako_dui_radar_icon_priority_setting = 1;  // engineer, medic and 
 diwako_dui_radar_icon_scale_crew = 6;
 diwako_dui_radar_leadingZeroes = false;
 diwako_dui_radar_namelist_hideWhenLeader = false;
-diwako_dui_radar_namelist_vertical_spacing = 0.75;
+diwako_dui_radar_namelist_vertical_spacing = 0.75;  // default: 1
 diwako_dui_radar_occlusion_fade_in_time = 1;
 diwako_dui_radar_occlusion_fade_time = 10;
 diwako_dui_radar_pointer_color = [1,0.5,0,1];
@@ -744,6 +833,7 @@ diwako_dui_radar_showSpeaking = true;
 diwako_dui_radar_showSpeaking_radioOnly = false;
 diwako_dui_radar_showSpeaking_replaceIcon = true;
 force force diwako_dui_radar_sortType = "fireteam";  // default: "none"
+// Show leader first in the list
 force force diwako_dui_radar_sqlFirst = true;  // default: false
 force force diwako_dui_radar_syncGroup = false;
 force force diwako_dui_radar_vehicleCompassEnabled = false;
@@ -764,6 +854,7 @@ force force emr_main_dropDuty = 0.7;
 emr_main_dropViewElevation = -0.7;
 emr_main_enableWalkableSurface = true;
 force force emr_main_enableWeightCheck = false;
+// 0: Hint, 1: Hint (silent), 2: Title effect, 3: System chat, 4: Disabled
 force force emr_main_hintType = 2;  // default: not forced
 emr_main_interactBehaviorInVehicle = "DISMOUNT";
 force force emr_main_jumpDuty = 1;
@@ -785,15 +876,18 @@ force force emr_main_yeetCoefficient = 1.4;
 
 //// Freestyle's Crash Landing
 force force fscl_captiveSystem = true;
-force force fscl_damageTreshold = 95;  // default: 99. Gives a bit more leeway to land successfully
+// Gives a bit more leeway to land successfully
+force force fscl_damageTreshold = 95;  // default: 99
 force force fscl_debug = false;
 force force fscl_ejectionProp = 33;
 force force fscl_ejectionSystem = true;
 force force fscl_gForceThreshold = 5;
-force force fscl_ignoreNonPlayerVehicles = false;  // default: true. Default value would make empty vics invincible
+// Default value would make empty vics invincible
+force force fscl_ignoreNonPlayerVehicles = false;  // default: true
 force force fscl_stateThreshold = 10;
 
 //// GRAD Trenches
+// TODO: revisit the dig times
 force force grad_trenches_functions_allowBigEnvelope = true;
 force force grad_trenches_functions_allowCamouflage = true;
 force force grad_trenches_functions_allowDigging = true;
@@ -907,6 +1001,7 @@ force force spectrumDeviceFunctionality_militaryMinFreq = 100;
 force force spectrumDeviceFunctionality_updateDelay = 1;
 
 //// TFAR - Animations
+// default all: not forced
 force force radioAnims_cba_ads = true;
 force force radioAnims_cba_Earpieces = "[]";  // default: earpiece
 force force radioAnims_cba_main = true;
@@ -963,7 +1058,8 @@ force force TFAR_objectInterceptionStrength = 400;
 force force tfar_radiocode_east = "_opfor";
 force force tfar_radiocode_independent = "_independent";
 force force tfar_radiocode_west = "_bluefor";
-force force tfar_radioCodesDisabled = true;  // default: false. We want to allow players to use radios from all factions
+// We want to allow players to use radios from all factions
+force force tfar_radioCodesDisabled = true;  // default: false
 force force TFAR_SameLRFrequenciesForSide = false;
 force force TFAR_SameSRFrequenciesForSide = false;
 force force TFAR_setting_defaultFrequencies_lr_east = "";
@@ -1045,13 +1141,15 @@ force force WP_VolcanoRemove = true;
 force force WP_WindGust = true;
 
 //// Zeus Enhanced
-force force zen_area_markers_editableMarkers = 0;  // 0: All markers, 1: Only Zeus-created
+// 0: All markers, 1: Only Zeus-created
+force force zen_area_markers_editableMarkers = 0;
 zen_building_markers_enabled = false;
 zen_camera_adaptiveSpeed = true;
 zen_camera_defaultSpeedCoef = 1;
 zen_camera_fastSpeedCoef = 1;
 zen_camera_followTerrain = true;
 force force zen_common_ascensionMessages = false;
+// Mostly has the same behaviour as ACE, with some additions
 force force zen_common_autoAddObjects = true;  // default: false
 force force zen_common_cameraBird = false;
 zen_common_darkMode = false;
