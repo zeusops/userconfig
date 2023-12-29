@@ -283,22 +283,22 @@ force force ace_medical_ai_enabledFor = 2;
 // 0: disabled, 1: enabled, 2: enabled - auto convert items
 // Does AI require items for medical?
 force force ace_medical_ai_requireItems = 0;
-force force ace_medical_AIDamageThreshold = 0.5;  // default: 1
-force force ace_medical_bleedingCoefficient = 0.75;  // default: 1
+force force ace_medical_AIDamageThreshold = 1;
+force force ace_medical_bleedingCoefficient = 1;
 force force ace_medical_blood_bloodLifetime = 900;
 force force ace_medical_blood_enabledFor = 2;
-force force ace_medical_blood_maxBloodObjects = 500;
+force force ace_medical_blood_maxBloodObjects = 100;  // was: 500
 // TODO: check if this should be lowered. "Fatal Injury Death Chance"
 force force ace_medical_deathChance = 1;
 force force ace_medical_dropWeaponUnconsciousChance = 0;
 force force ace_medical_enableVehicleCrashes = true;
 force force ace_medical_engine_damagePassThroughEffect = 1;
 // 0: vital shots only, 1: sum of trauma, 2: either
-force force ace_medical_fatalDamageSource = 2;  // default 0
+force force ace_medical_fatalDamageSource = 0;
 ace_medical_feedback_bloodVolumeEffectType = 0;
 ace_medical_feedback_enableHUDIndicators = true;
 ace_medical_feedback_painEffectType = 0;
-force force ace_medical_fractureChance = 0.8;
+force force ace_medical_fractureChance = 0.35;  // was: 0.8
 force force ace_medical_fractures = 1;
 ace_medical_gui_bloodLossColor_0 = [0,0,0,1];
 ace_medical_gui_bloodLossColor_1 = [1,0.95,0.64,1];
@@ -330,40 +330,39 @@ ace_medical_gui_openAfterTreatment = true;
 ace_medical_gui_peekMedicalInfoReleaseDelay = 1;
 ace_medical_gui_peekMedicalOnHit = false;
 ace_medical_gui_peekMedicalOnHitDuration = 1;
-force force ace_medical_gui_showBloodlossEntry = true;
-force force ace_medical_gui_showDamageEntry = false;
+force force ace_medical_gui_showbloodlossentry = true;
+force force ace_medical_gui_showdamageentry = false;
 ace_medical_gui_tourniquetWarning = false;
-force force ace_medical_ivFlowRate = 6;  // default: 1
+force force ace_medical_ivFlowRate = 1.5;
 force force ace_medical_limping = 1;
-force force ace_medical_painCoefficient = 0.85;  // default: 1
+force force ace_medical_painCoefficient = 1;
 force force ace_medical_painUnconsciousChance = 0.1;
 // TODO: Should this be tweaked with regards to playerDamageThreshold
 //       and painCoefficient?
-force force ace_medical_painUnconsciousThreshold = 0.5;
+force force ace_medical_painUnconsciousThreshold = 0.75;  // was: 0.5
 // Sets the amount of damage a player can receive before going unconscious
 // (and dying if "Sum of Trauma" is enabled).
-force force ace_medical_playerDamageThreshold = 2;  // default: 1
-force force ace_medical_spontaneousWakeUpChance = 0.25;  // default: 0.05
-force force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;  // default: 1
-force force ace_medical_statemachine_AIUnconsciousness = false;  // default: true
+force force ace_medical_playerDamageThreshold = 1;
+force force ace_medical_spontaneousWakeUpChance = 0.4;  // was: 0.25
+force force ace_medical_spontaneousWakeUpEpinephrineBoost = 2;  // was: 15
+force force ace_medical_statemachine_AIUnconsciousness = true;
 force force ace_medical_statemachine_cardiacArrestBleedoutEnabled = true;
-//// TODO: should this be increased to default?
-force force ace_medical_statemachine_cardiacArrestTime = 120;  // default: 300
+force force ace_medical_statemachine_cardiacArrestTime = 300;  // was: 120
 // 0: always, 1: cardiac arrest, 2: never
 force force ace_medical_statemachine_fatalInjuriesAI = 0;
 // 0: always, 1: cardiac arrest, 2: never
-force force ace_medical_statemachine_fatalInjuriesPlayer = 1;  // default: 0
+force force ace_medical_statemachine_fatalInjuriesPlayer = 2;  // was: 1
 // 0: disabled, 1: enabled, 2: enabled+reopen
-force force ace_medical_treatment_advancedBandages = 0;  // default: 1
+force force ace_medical_treatment_advancedBandages = 1;
 // 0: disabled, 1: enabled, 2: Enabled & Can Diagnose Death/Cardiac Arrest
-force force ace_medical_treatment_advancedDiagnose = 0;  // default: 1
-force force ace_medical_treatment_advancedMedication = false;  // default: true
+force force ace_medical_treatment_advancedDiagnose = 1;
+force force ace_medical_treatment_advancedMedication = true;
 force force ace_medical_treatment_allowBodyBagUnconscious = false;
 // 0: disabled, 1: only if dead, 2: yes
-force force ace_medical_treatment_allowGraveDigging = 0;  // default: 1
+force force ace_medical_treatment_allowGraveDigging = 2;  // was: 0
 force force ace_medical_treatment_allowLitterCreation = true;
 force force ace_medical_treatment_allowSelfIV = 1;
-force force ace_medical_treatment_allowSelfPAK = 1;  // default: 0
+force force ace_medical_treatment_allowSelfPAK = 0;
 force force ace_medical_treatment_allowSelfStitch = 0;
 force force ace_medical_treatment_allowSharedEquipment = 0;
 // Effectiveness coef
@@ -373,39 +372,36 @@ force force ace_medical_treatment_bandageEffectiveness = 1;
 // "potential", but takes the time equivalent to bandaging both wounds separately
 ace_medical_treatment_bandageRollover = true;
 // 0: never, 1: after stitch, 2: after bandage
-force force ace_medical_treatment_clearTrauma = 2;  // default: 1
+force force ace_medical_treatment_clearTrauma = 1;
 force force ace_medical_treatment_consumePAK = 0;
 force force ace_medical_treatment_consumeSurgicalKit = 0;
 force force ace_medical_treatment_convertItems = 0;
-// TODO: Should these be changed?
-force force ace_medical_treatment_cprSuccessChanceMax = 1;  // default: 0.4
-force force ace_medical_treatment_cprSuccessChanceMin = 1;  // default: 0.4
-// Create grave markers. Digging graves is disabled elsewhere.
+force force ace_medical_treatment_cprSuccessChanceMax = 0.4;
+force force ace_medical_treatment_cprSuccessChanceMin = 0.4;
 force force ace_medical_treatment_graveDiggingMarker = true;
 force force ace_medical_treatment_holsterRequired = 0;
-force force ace_medical_treatment_litterCleanupDelay = 600;
+force force ace_medical_treatment_litterCleanupDelay = 208.197;  // was: 600
 force force ace_medical_treatment_locationEpinephrine = 0;
 // 0: Anywhere, 1: Vehicle, 2: MedicalFacilities, 3: VehiclesAndFacilities, 4: Disabled
 force force ace_medical_treatment_locationIV = 0;
 // 0: Anywhere, 1: Vehicle, 2: MedicalFacilities, 3: VehiclesAndFacilities, 4: Disabled
-force force ace_medical_treatment_locationPAK = 4;  // default: 3
+force force ace_medical_treatment_locationPAK = 3;
 force force ace_medical_treatment_locationsBoostTraining = false;
 // 0: Anywhere, 1: Vehicle, 2: MedicalFacilities, 3: VehiclesAndFacilities, 4: Disabled
-force force ace_medical_treatment_locationSurgicalKit = 4;  // default: 2
-force force ace_medical_treatment_maxLitterObjects = 500;
+force force ace_medical_treatment_locationSurgicalKit = 2;
+force force ace_medical_treatment_maxLitterObjects = 50;  // was: 500
 force force ace_medical_treatment_medicEpinephrine = 0;
-force force ace_medical_treatment_medicIV = 1;
+force force ace_medical_treatment_medicIV = 0;  // was: 1
 force force ace_medical_treatment_medicPAK = 1;
 force force ace_medical_treatment_medicSurgicalKit = 1;
-force force ace_medical_treatment_timeCoefficientPAK = 0.7;  // default: 1
+force force ace_medical_treatment_timeCoefficientPAK = 1;
 force force ace_medical_treatment_treatmentTimeAutoinjector = 5;
 force force ace_medical_treatment_treatmentTimeBodyBag = 15;
-force force ace_medical_treatment_treatmentTimeCPR = 15;
+force force ace_medical_treatment_treatmentTimeCPR = 17.995;  // was: 15
 force force ace_medical_treatment_treatmentTimeGrave = 30;
 force force ace_medical_treatment_treatmentTimeIV = 12;
 force force ace_medical_treatment_treatmentTimeSplint = 7;
 force force ace_medical_treatment_treatmentTimeTourniquet = 7;
-// NOTE: just a coef, disabled elsewhere
 force force ace_medical_treatment_woundReopenChance = 1;
 force force ace_medical_treatment_woundStitchTime = 5;
 
