@@ -354,7 +354,7 @@ force force ace_medical_statemachine_fatalInjuriesAI = 0;
 // 0: always, 1: cardiac arrest, 2: never
 force force ace_medical_statemachine_fatalInjuriesPlayer = 1;  // default: 0
 // 0: disabled, 1: enabled, 2: enabled+reopen
-force force ace_medical_treatment_advancedBandages = 2;  // default: 1
+force force ace_medical_treatment_advancedBandages = 0;  // default: 1
 // 0: disabled, 1: enabled, 2: Enabled & Can Diagnose Death/Cardiac Arrest
 force force ace_medical_treatment_advancedDiagnose = 0;  // default: 1
 force force ace_medical_treatment_advancedMedication = false;  // default: true
@@ -373,7 +373,7 @@ force force ace_medical_treatment_bandageEffectiveness = 1;
 // "potential", but takes the time equivalent to bandaging both wounds separately
 ace_medical_treatment_bandageRollover = true;
 // 0: never, 1: after stitch, 2: after bandage
-force force ace_medical_treatment_clearTrauma = 1;  // default: 1
+force force ace_medical_treatment_clearTrauma = 2;  // default: 1
 force force ace_medical_treatment_consumePAK = 0;
 force force ace_medical_treatment_consumeSurgicalKit = 0;
 force force ace_medical_treatment_convertItems = 0;
