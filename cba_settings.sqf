@@ -251,7 +251,7 @@ force force ace_map_BFT_ShowPlayerNames = false;
 // -1: disabled, 0: global, 1: side, 2: command, 3: group, 4: vehicle, 5: direct
 force force ace_map_DefaultChannel = 0;  // default: -1
 force force ace_map_mapGlow = true;  // default: true
-force force ace_map_mapIllumination = true;  // default: true
+ace_map_mapIllumination = true;  // default: true, forced
 force force ace_map_mapLimitZoom = false;
 force force ace_map_mapShake = false;  // default: true
 force force ace_map_mapShowCursorCoordinates = false;
