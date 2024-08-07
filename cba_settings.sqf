@@ -924,7 +924,7 @@ force force grad_trenches_functions_stopBuildingAtFatigueMax = false;  // defaul
 force force grad_trenches_functions_textureLockDistance = 5;
 force force grad_trenches_functions_timeoutToDecay = 1800;
 force force grad_trenches_functions_vehicleEnvelopeDamageMultiplier = 1;
-force force grad_trenches_functions_vehicleEnvelopeDigTime = 300;  // default: 120
+force force grad_trenches_functions_vehicleEnvelopeDigTime = 200;  // default: 120
 force force grad_trenches_functions_vehicleEnvelopeRemovalTime = -1;
 force force grad_trenches_functions_vehicleTrenchBuildSpeed = 5;
 
