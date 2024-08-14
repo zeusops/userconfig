@@ -1128,7 +1128,7 @@ force force tsp_cba_breach_lock_blacklist = "[]";
 // control the locking instead
 force force tsp_cba_breach_lock_door = 0;  // default: 0.75
 force force tsp_cba_breach_lock_house = 0;  // default: 0.25
-force force tsp_cba_breach_lockpick = "[0,0.75,0.5,0.05]";
+force force tsp_cba_breach_picking_time = 30;
 force force tsp_cba_breach_military = "[
 ""Land_Budova4_in"",
 ""Land_Budova4"",
