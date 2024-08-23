@@ -25,7 +25,6 @@ ace_advanced_fatigue_fadeStaminaBar = true;
 force force ace_advanced_fatigue_loadFactor = 1;
 force force ace_advanced_fatigue_performanceFactor = 1;
 force force ace_advanced_fatigue_recoveryFactor = 1;
-force force ace_advanced_fatigue_swayFactor = 1;
 force force ace_advanced_fatigue_terrainGradientFactor = 1;
 
 //// ACE Advanced Throwing
@@ -1121,9 +1120,14 @@ force force tsp_cba_breach_ammo = "[
 ]";
 force force tsp_cba_breach_ammo_multiplier = 1;
 force force tsp_cba_breach_auto = 5;
+// "Enable/disable lock breaking on breach"
+force force tsp_cba_breach_break = true;
 force force tsp_cba_breach_lock_blacklist = "[]";
+// The chance of automatically locking doors. Disabling here to let the Zeus
+// control the locking instead
 force force tsp_cba_breach_lock_door = 0;  // default: 0.75
 force force tsp_cba_breach_lock_house = 0;  // default: 0.25
+force force tsp_cba_breach_lockpick = "[0,0.75,0.5,0.05]";
 force force tsp_cba_breach_military = "[
 ""Land_Budova4_in"",
 ""Land_Budova4"",
@@ -1166,6 +1170,8 @@ force force tsp_cba_breach_military = "[
 ""Land_Army_hut2"",
 ""Land_Army_hut3_long_int""
 ]";
+force force tsp_cba_breach_paperclip = "[0,0.5,0.25,0.15]";
+force force tsp_cba_breach_picking_time = 20;
 force force tsp_cba_breach_reinforced = "[
 ""Land_Ammostore2"",
 ""Land_Garaz_s_tankem"",
