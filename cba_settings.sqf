@@ -1119,7 +1119,8 @@ force force tsp_cba_breach_ammo = "[
 ""ACE_12Gauge_Pellets_Submunition_No0_Buck"",""HLC_12G_Buck""
 ]";
 force force tsp_cba_breach_ammo_multiplier = 1;
-force force tsp_cba_breach_auto = 5;
+// "Time to detonation for auto fuse"
+force force tsp_cba_breach_auto = 8;  // default: 5
 // "Enable/disable lock breaking on breach"
 force force tsp_cba_breach_break = true;
 force force tsp_cba_breach_lock_blacklist = "[]";
@@ -1171,7 +1172,7 @@ force force tsp_cba_breach_military = "[
 ""Land_Army_hut3_long_int""
 ]";
 force force tsp_cba_breach_paperclip = "[0,0.5,0.25,0.15]";
-force force tsp_cba_breach_picking_time = 20;
+force force tsp_cba_breach_picking_time = 30;  // default: 20
 force force tsp_cba_breach_reinforced = "[
 ""Land_Ammostore2"",
 ""Land_Garaz_s_tankem"",
@@ -1198,7 +1199,9 @@ force force tsp_cba_breach_reinforced = "[
 ""Land_Cargo_HQ_V3_F"",
 ""Land_Cargo_House_V3_F""
 ]";
-force force tsp_cba_breach_shock = 240;
+// "Time to delete wire for shock tube"
+force force tsp_cba_breach_shock = 95;  // default: 240
+// "Enable/disable vanilla scroll wheel interaction on doors"
 tsp_cba_breach_vanilla = false;
 force force tsp_cba_breach_walls = "[
 [""AHHH"", ""Land_BrickWall_04_l_5m_F"",""Land_BrickWall_04_l_5m_d_F""],
@@ -1226,14 +1229,16 @@ force force tsp_cba_breach_walls = "[
 [""AHHH"", ""Land_Mil_WallBig_Corner_F"",""Land_Mil_WallBig_debris_F""],
 [""AHHH"", ""Land_Mil_WallBig_corner_battered_F"",""Land_Mil_WallBig_debris_F""]
 ]";
-force force tsp_cba_flashbang_brightness = 1;
-force force tsp_cba_flashbang_distance = 10;
+force force tsp_cba_flashbang_brightness = 0.9;  // default: 1
+force force tsp_cba_flashbang_distance = 15;  // default: 10
 force force tsp_cba_flashbang_fire = true;
-force force tsp_cba_flashbang_friends = 0.1;
+// "Decrease flashbang effects for friendly units"
+force force tsp_cba_flashbang_friends = 0.8;  // default: 0.1
 force force tsp_cba_flashbang_intensity = 1;
-force force tsp_cba_flashbang_smoke = true;
+force force tsp_cba_flashbang_smoke = false;  // default: true
 force force tsp_cba_flashbang_sparks = true;
-force force tsp_cba_flashbang_spray = 0.4;
+// "Chance unit will fire weapon while flashed"
+force force tsp_cba_flashbang_spray = 0;  // default: 0.4
 force force tsp_cba_flashbang_surrender = 0.1;
 
 //// TSP Core
@@ -1242,7 +1247,8 @@ force force tsp_cba_core_chvd = false;
 force force tsp_cba_core_pause = false;
 force force tsp_cba_hint = "Subtitle";
 force force tsp_cba_hint_distance = 20;
-force force tsp_param_faction = false;
+// "Custom faction loadouts"
+force force tsp_param_faction = true;  // default: false
 
 //// UK3CB Factions
 uk3cb_pipstretchfactor = 0;
