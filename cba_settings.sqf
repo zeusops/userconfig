@@ -4,10 +4,10 @@ force force A3TI_ALLOW_TANK_DRIVER = false;
 // When disabled, the vanilla thermals are disabled automatically
 force force A3TI_ALLOW_VANILLA_TI = true;
 A3TI_ENABLE_ZEUS = true;  // default: forced
-force force A3TI_HD_VISION_FIGHTER = false;
-force force A3TI_HD_VISION_LANDVEH = true;
-force force A3TI_HD_VISION_SHIP = false;
-force force A3TI_HD_VISION_UAV = true;
+force A3TI_HD_VISION_FIGHTER = false;
+force A3TI_HD_VISION_LANDVEH = true;
+force A3TI_HD_VISION_SHIP = false;
+force A3TI_HD_VISION_UAV = true;
 force force A3TI_REMOVE_FILMGRAIN_RHS = true;
 
 //// ACE Advanced Ballistics
