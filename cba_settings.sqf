@@ -1126,8 +1126,8 @@ force force tsp_cba_breach_break = true;
 force force tsp_cba_breach_lock_blacklist = "[]";
 // The chance of automatically locking doors. Disabling here to let the Zeus
 // control the locking instead
-force force tsp_cba_breach_lock_door = 0;  // default: 0.75
-force force tsp_cba_breach_lock_house = 0;  // default: 0.25
+force force tsp_cba_breach_lock_door = 0.5;
+force force tsp_cba_breach_lock_house = 0.25;
 force force tsp_cba_breach_picking_time = 30;
 force force tsp_cba_breach_military = "[
 ""Land_Budova4_in"",
